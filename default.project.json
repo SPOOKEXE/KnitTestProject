@@ -5,9 +5,7 @@
 		"ReplicatedStorage": {
 			"$className": "ReplicatedStorage",
 			"$ignoreUnknownInstances": true,
-			"Source": {
-				"$path": "src/ReplicatedStorage"
-			},
+			"$path": "src/ReplicatedStorage",
 			"Packages": {
 				"$path": "Packages"
 			}
@@ -15,25 +13,19 @@
 		"ServerScriptService": {
 			"$className": "ServerScriptService",
 			"$ignoreUnknownInstances": true,
-			"Source": {
-				"$path": "src/ServerScriptService"
-			}
+			"$path": "src/ServerScriptService"
 		},
 		"ServerStorage": {
 			"$className": "ServerStorage",
 			"$ignoreUnknownInstances": true,
-			"Source": {
-				"$path": "src/ServerStorage"
-			}
+			"$path": "src/ServerStorage"
 		},
 		"StarterPlayer": {
 			"$className": "StarterPlayer",
 			"StarterPlayerScripts": {
 				"$className": "StarterPlayerScripts",
 				"$ignoreUnknownInstances": true,
-				"Source": {
-					"$path": "src/StarterPlayerScripts"
-				}
+				"$path": "src/StarterPlayerScripts"
 			}
 		}
 	}
