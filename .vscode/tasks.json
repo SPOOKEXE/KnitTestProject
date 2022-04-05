@@ -1,0 +1,39 @@
+{
+	// https://stackoverflow.com/questions/31702041/multiple-commands-tasks-with-visual-studio-code
+	"version": "2.0.0",
+	"tasks": [
+
+		{
+			"label": "update foreman tools",
+			"type": "shell",
+			"command": "foreman install"
+		},
+		{
+			"label": "update wally tools",
+			"type": "shell",
+			"command": "wally install"
+		},
+		{
+			"label": "rojo server startup",
+			"type": "shell",
+			"windows": {
+				"command": "rojo serve default.project.json"
+			},
+		},
+		
+
+
+		{
+			"label": "Build Project",
+			"dependsOn": ["update foreman tools", "update wally tools"],
+			"group": "build",
+			"dependsOrder": "sequence"
+		},
+		{
+			"label": "Run Project Rojo",
+			"dependsOn": ["rojo server startup", "rojo-explorer.open"],
+			"dependsOrder": "sequence",
+			"group": "test"
+		}
+	]
+}
