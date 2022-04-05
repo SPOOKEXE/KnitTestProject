@@ -4,7 +4,16 @@ local Players = game:GetService('Players')
 local ReplicatedStorage = game:GetService('ReplicatedStorage')
 local Knit = require( ReplicatedStorage.Packages.Knit )
 
-local MoneyService = Knit.CreateService { Name = "MoneyService", Client = { } }
+local MoneyService = Knit.CreateService {
+	Name = "MoneyService",
+	Client = { },
+	--[[
+	Middleware = {
+		Inbound = {function(...) print("INBOUND: ", ...) return true end},
+		Outbound = {function(...) print("OUTBOUND: ", ...) return true end},
+	}]]
+}
+
 MoneyService._MoneyCache = { }
 MoneyService._StartMoney = 50
 MoneyService.Client.onMoneyChanged = Knit.CreateSignal()

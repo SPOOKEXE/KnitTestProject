@@ -7,6 +7,15 @@ for _, ModuleScript in ipairs( ReplicatedStorage.Controllers:GetChildren() ) do
 	end
 end
 
-Knit.Start():andThen(function()
+local PerServiceMiddleware = false --[[{
+	MoneyService = {
+		Inbound = {function(...) print("INBOUND: ", ...) return true end},
+		Outbound = {function(...) print("OUTBOUND: ", ...) return true end},
+	},
+}]]
+
+Knit.Start({
+	PerServiceMiddleware = PerServiceMiddleware,
+}):andThen(function()
 	print("Knit Started")
 end):catch(warn)
